@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>První Vinted katalog v ČR</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -11,11 +12,9 @@
             padding: 0;
             display: flex;
             flex-direction: column;
-            background-image: url('https://wallpapers.com/images/hd/random-background-1920-x-1080-9gb6lqc5b4gkk6yw.jpg');
-            background-size: cover;
-            background-position: center;
+            background-image: url('https://www.transparenttextures.com/patterns/paper-fibers.png');
+            background-color: #f4f4f4;
             background-attachment: fixed;
-            background-repeat: no-repeat;
             height: 100vh;
             justify-content: space-between;
         }
@@ -25,6 +24,7 @@
             color: white;
             text-align: center;
             padding: 30px 0;
+            position: relative;
         }
 
         nav {
@@ -45,6 +45,38 @@
 
         nav button:hover {
             background-color: rgba(0, 123, 255, 0.8);
+        }
+
+        .hamburger {
+            position: absolute;
+            top: 15px;
+            left: 20px;
+            cursor: pointer;
+            font-size: 28px;
+            color: white;
+        }
+
+        .dropdown {
+            display: none;
+            position: absolute;
+            top: 50px;
+            left: 20px;
+            background-color: white;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            z-index: 1000;
+            min-width: 200px;
+        }
+
+        .dropdown a {
+            display: block;
+            padding: 10px;
+            color: #333;
+            text-decoration: none;
+        }
+
+        .dropdown a:hover {
+            background-color: #f1f1f1;
         }
 
         .product-list {
@@ -107,38 +139,50 @@
         .cart-button:hover {
             background-color: rgba(0, 123, 255, 1);
         }
+
         @media (max-width: 1024px) {
-    .product-list {
-        grid-template-columns: repeat(2, 1fr); /* tablet – 2 sloupce */
-    }
-}
+            .product-list {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
 
-@media (max-width: 600px) {
-    .product-list {
-        grid-template-columns: 1fr; /* mobil – 1 sloupec */
-        padding: 20px;
-    }
+        @media (max-width: 600px) {
+            .product-list {
+                grid-template-columns: 1fr;
+                padding: 20px;
+            }
 
-    nav button, .cart-button, .product a button {
-        font-size: 0.9em;
-        padding: 8px 12px;
-    }
+            nav button, .cart-button, .product a button {
+                font-size: 0.9em;
+                padding: 8px 12px;
+            }
 
-    .product {
-        width: 100%;
-        max-width: 300px;
-    }
+            .product {
+                width: 100%;
+                max-width: 300px;
+            }
 
-    .cart-button {
-        position: static;
-        margin: 10px auto;
-        display: block;
-    }
-}
+            .cart-button {
+                position: static;
+                margin: 10px auto;
+                display: block;
+            }
+        }
     </style>
 </head>
 <body>
     <header>
+        <div class="hamburger" onmouseover="showDropdown()" onmouseout="hideDropdown()">☰</div>
+        <div class="dropdown" onmouseover="showDropdown()" onmouseout="hideDropdown()">
+            <a href="kategorie1.html">Dámské oblečení</a>
+            <a href="kategorie2.html">Pánské oblečení</a>
+            <a href="kategorie3.html">Dětské oblečení</a>
+            <a href="kategorie4.html">Obuv</a>
+            <a href="kategorie5.html">Doplňky</a>
+            <a href="kategorie6.html">Kosmetika</a>
+            <a href="kategorie7.html">Domácnost</a>
+            <a href="kategorie8.html">Elektronika</a>
+        </div>
         <h1>První Vinted katalog v ČR</h1>
         <nav>
             <button onclick="location.href='sponzori.html'">Sponzoři</button>
@@ -146,11 +190,10 @@
         </nav>
     </header>
 
-    <!-- Tlačítko košíku -->
     <button class="cart-button">Košík</button>
 
-    <!-- Produkty -->
     <div class="product-list">
+        <!-- Tvoje produkty (zkráceno pro přehlednost) -->
         <div class="product">
             <img src="https://images1.vinted.net/t/03_018df_GcgpgCExFTvm3RdCreqkeL5F/f800/1743851506.jpeg?s=116046f129ac348d3679c53d9f5865d63d213f24" alt="Produkt 1">
             <h3>Týdenní diář</h3>
@@ -160,90 +203,21 @@
                 <button>Přejít na produkt</button>
             </a>
         </div>
-
-        <div class="product">
-            <img src="https://images1.vinted.net/t/01_025ef_zBjbfSnMCG3zVDvYkY6ufcJM/f800/1742720458.jpeg?s=c5e6ebbb415584df0852d318191d50f89f522715" alt="Produkt 2">
-            <h3>Sada metalických akrylových barev</h3>
-            <p>Úplně nové, nerozbalené, 4x12ml metalické barvy v sadě (zlatá, stříbrná, bronzová a měděná)</p>
-            <div class="price">81 Kč</div>
-            <a href="https://www.vinted.cz/items/6016398611-sada-metalickych-akrylovych-barev="_blank">
-                <button>Přejít na produkt</button>
-            </a>
-        </div>
-
-        <div class="product">
-            <img src="https://images1.vinted.net/t/04_00232_6hK1Hw4sfPtQHixadph4fojB/f800/1743233926.jpeg?s=a16296ac019104a7d3e496b65bc800e8a26f332e" alt="Produkt 3">
-            <h3>Madagascar centella SPF krém</h3>
-            <p>Nový, nepoužitý, SPF krém</p>
-            <div class="price">301,50 Kč</div>
-            <a href="https://www.vinted.cz/items/6050450283-madagascar-centella-spf-krem" target="_blank">
-                <button>Přejít na produkt</button>
-            </a>
-        </div>
-
-        <div class="product">
-            <img src="https://example.com/obrazek4.jpg" alt="Produkt 4">
-            <h3>Produkt 4</h3>
-            <p>Popis produktu 4</p>
-            <div class="price">499 Kč</div>
-            <a href="https://example.com/odkaz4" target="_blank">
-                <button>Přejít na produkt</button>
-            </a>
-        </div>
-
-        <div class="product">
-            <img src="https://example.com/obrazek5.jpg" alt="Produkt 5">
-            <h3>Produkt 5</h3>
-            <p>Popis produktu 5</p>
-            <div class="price">899 Kč</div>
-            <a href="https://example.com/odkaz5" target="_blank">
-                <button>Přejít na produkt</button>
-            </a>
-        </div>
-
-        <div class="product">
-            <img src="https://example.com/obrazek6.jpg" alt="Produkt 6">
-            <h3>Produkt 6</h3>
-            <p>Popis produktu 6</p>
-            <div class="price">999 Kč</div>
-            <a href="https://example.com/odkaz6" target="_blank">
-                <button>Přejít na produkt</button>
-            </a>
-        </div>
-
-        <div class="product">
-            <img src="https://example.com/obrazek7.jpg" alt="Produkt 7">
-            <h3>Produkt 7</h3>
-            <p>Popis produktu 7</p>
-            <div class="price">499 Kč</div>
-            <a href="https://example.com/odkaz7" target="_blank">
-                <button>Přejít na produkt</button>
-            </a>
-        </div>
-
-        <div class="product">
-            <img src="https://example.com/obrazek8.jpg" alt="Produkt 8">
-            <h3>Produkt 8</h3>
-            <p>Popis produktu 8</p>
-            <div class="price">899 Kč</div>
-            <a href="https://example.com/odkaz8" target="_blank">
-                <button>Přejít na produkt</button>
-            </a>
-        </div>
-
-        <div class="product">
-            <img src="https://example.com/obrazek9.jpg" alt="Produkt 9">
-            <h3>Produkt 9</h3>
-            <p>Popis produktu 9</p>
-            <div class="price">999 Kč</div>
-            <a href="https://example.com/odkaz9" target="_blank">
-                <button>Přejít na produkt</button>
-            </a>
-        </div>
+        <!-- Přidej další produkty dle potřeby -->
     </div>
 
     <footer>
         <p>&copy; 2025 Baymaxův e-shop | Všechna práva vyhrazena</p>
     </footer>
+
+    <script>
+        function showDropdown() {
+            document.querySelector(".dropdown").style.display = "block";
+        }
+
+        function hideDropdown() {
+            document.querySelector(".dropdown").style.display = "none";
+        }
+    </script>
 </body>
 </html>
