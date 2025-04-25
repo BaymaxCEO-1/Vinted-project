@@ -87,6 +87,10 @@
             justify-items: center;
             padding: 30px;
             flex-grow: 1;
+            max-width: 90%; /* Přidání maximální šířky */
+            margin: 0 auto; /* Zarovnání do středu */
+            padding-left: 220px; /* Zajištění, že produkty nebudou překrývat levý banner */
+            padding-right: 220px; /* Zajištění, že produkty nebudou překrývat pravý banner */
         }
 
         .product {
@@ -199,6 +203,12 @@
                 width: 100%;
                 height: auto;
                 position: relative;
+            }
+
+            /* Při zmenšení na mobilní zařízení přidáme okraj pro produkty */
+            .product-list {
+                padding-left: 0;
+                padding-right: 0;
             }
         }
     </style>
