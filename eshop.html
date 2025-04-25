@@ -140,6 +140,33 @@
             background-color: rgba(0, 123, 255, 1);
         }
 
+        /* Bannery po stranách */
+        .side-banner {
+            position: fixed;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 123, 255, 0.7);
+            color: white;
+            padding: 15px;
+            font-size: 1.2em;
+            z-index: 1000;
+        }
+
+        .left-banner {
+            left: 0;
+            border-radius: 0 10px 10px 0;
+        }
+
+        .right-banner {
+            right: 0;
+            border-radius: 10px 0 0 10px;
+        }
+
+        .left-banner, .right-banner {
+            width: 250px;
+            text-align: center;
+        }
+
         @media (max-width: 1024px) {
             .product-list {
                 grid-template-columns: repeat(2, 1fr);
@@ -190,8 +217,16 @@
         </nav>
     </header>
 
+    <!-- Bannery po stranách -->
+    <div class="side-banner left-banner">
+        <p>Do cen je započítaná ochrana kupujícího z Vinted</p>
+    </div>
+
+    <div class="side-banner right-banner">
+        <p>Do cen je započítaná ochrana kupujícího z Vinted</p>
+    </div>
+
     <div class="product-list">
-        <!-- Původní 3 produkty -->
         <div class="product">
             <img src="https://images1.vinted.net/t/03_018df_GcgpgCExFTvm3RdCreqkeL5F/f800/1743851506.jpeg?s=116046f129ac348d3679c53d9f5865d63d213f24" alt="Produkt 1">
             <h3>Týdenní diář</h3>
@@ -211,7 +246,6 @@
         <div class="product">
             <img src="https://images1.vinted.net/t/02_00a47_YjvvAntFMmHwymKtGbV5vz7s/f800/1742723108.jpeg?s=dee6abc1f2d548519be4c477ad635f7f7263f502" alt="Produkt 3">
             <h3>Bílé malířské plátno</h3>
-            <p></p>
             <div class="price">120,50 Kč</div>
             <a href="https://www.vinted.cz/items/6016742141-bile-malirske-platno"><button>Přejít na produkt</button></a>
         </div>
@@ -296,7 +330,7 @@ uvnitř prostor na vizitky / karty 📇
     </div>
 
     <footer>
-        <p>&copy; 2025 Vinted katalog | Všechna práva vyhrazena</p>
+        <p>© 2025 Vinted katalog. Všechna práva vyhrazena.</p>
     </footer>
 
     <script>
