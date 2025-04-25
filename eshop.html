@@ -17,6 +17,7 @@
             background-attachment: fixed;
             height: 100vh;
             justify-content: space-between;
+            position: relative;
         }
 
         header {
@@ -140,31 +141,29 @@
             background-color: rgba(0, 123, 255, 1);
         }
 
-        /* Bannery po stranách */
-        .side-banner {
+        /* Vertikální bannery */
+        .left-banner, .right-banner {
             position: fixed;
-            top: 50%;
-            transform: translateY(-50%);
-            background-color: rgba(0, 123, 255, 0.7);
+            top: 0;
+            width: 200px;
+            height: 100%;
+            background-color: #003366; /* Tmavě modrá barva */
             color: white;
-            padding: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             font-size: 1.2em;
-            z-index: 1000;
+            padding: 20px;
+            text-align: center;
+            z-index: 9999;
         }
 
         .left-banner {
             left: 0;
-            border-radius: 0 10px 10px 0;
         }
 
         .right-banner {
             right: 0;
-            border-radius: 10px 0 0 10px;
-        }
-
-        .left-banner, .right-banner {
-            width: 250px;
-            text-align: center;
         }
 
         @media (max-width: 1024px) {
@@ -194,6 +193,13 @@
                 margin: 10px auto;
                 display: block;
             }
+
+            /* Bannery pro mobilní zařízení */
+            .left-banner, .right-banner {
+                width: 100%;
+                height: auto;
+                position: relative;
+            }
         }
     </style>
 </head>
@@ -216,15 +222,6 @@
             <button onclick="location.href='zamestnanci.html'">Zaměstnanci</button>
         </nav>
     </header>
-
-    <!-- Bannery po stranách -->
-    <div class="side-banner left-banner">
-        <p>Do cen je započítaná ochrana kupujícího z Vinted</p>
-    </div>
-
-    <div class="side-banner right-banner">
-        <p>Do cen je započítaná ochrana kupujícího z Vinted</p>
-    </div>
 
     <div class="product-list">
         <div class="product">
@@ -332,6 +329,8 @@ uvnitř prostor na vizitky / karty 📇
     <footer>
         <p>© 2025 Vinted katalog. Všechna práva vyhrazena.</p>
     </footer>
+ <div class="left-banner">Do cen je započítaná ochrana kupujícího z Vinted</div>
+    <div class="right-banner">Do cen je započítaná ochrana kupujícího z Vinted</div>
 
     <script>
         function showDropdown() {
